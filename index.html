@@ -1,12 +1,20 @@
-<div class="split left">
- <div class="centered">
- </div>
-</div>
-
-<div class="split right">
- <div class="centered">
- </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GChat</title>
+</head>
+<body>
+  <div class="split left">
+    <iframe src="http://192.168.1.22:8080/browserfs.html" class="viewframe" frameborder="0"></iframe>
+  </div>
+  
+  <div class="split right">
+    <iframe src="http://192.168.1.22:8080/browserfs.html" class="viewframe" frameborder="0"></iframe>
+  </div>
+</body>
+</html>
 
 
 <style media="screen">
@@ -19,10 +27,11 @@
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Mallard2.jpg');
+    background-image: url('');
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: 50%;
+    overflow: hidden;
   }
 
   /* Control the left side */
@@ -37,6 +46,18 @@
     background-color: black;
   }
 
+  .viewframe {
+    position: absolute;
+    border-style: none;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    overflow: hidden;
+    margin: 0;
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+
   /* If you want the content centered horizontally and vertically */
   .centered {
     position: absolute;
@@ -46,3 +67,10 @@
     text-align: center;
   }
 </style>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const cameraIP = urlParams.get('v');
+  console.log("Connected to, " + cameraIP + "!");
+  document.getElementsByClassName('split').style.backgroundImage = "url('" + cameraIP + "')";
+</script>
