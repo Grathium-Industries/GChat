@@ -1,12 +1,11 @@
 def displayVR(toRender):
-	default = """
-	<div class="split left">
-	<iframe src=""" + toRender + """ class="viewframe" frameborder="0"></iframe>
-	</div>
-
-	<div class="split right">
-	<iframe src=""" + toRender + """ class="viewframe" frameborder="0"></iframe>
-	</div>
+	videoTemplate = """
+	<video class="viewframe" autoplay>
+	<source src=""" + toRender + """ type="video/mp4">
+	Your browser does not support the video tag.
+	</video>
 	"""
 
-	return default
+	defaultContainers = "<div class='split left split-obj'>" + videoTemplate + "</div><div class='split right split-obj'>" + videoTemplate + "</div>"
+
+	return defaultContainers
