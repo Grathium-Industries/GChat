@@ -1,0 +1,16 @@
+# application information
+appName : VR
+description : A VR developmnt project
+author : Grathium Industries
+version : 1.0
+license : GNU General Public License 3.0
+
+# bundler info
+bundle-version : 1.0
+
+# application source, runtime and build directory
+runtime : runtime/
+source : src/
+scriptCount: 1
+scripts:
+  - 'python3 ./src/server.py'
