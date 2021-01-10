@@ -1,3 +1,2 @@
-# Grathium Industries
 #### VR
 ---
